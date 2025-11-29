@@ -1,0 +1,325 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #808080; /* Grey background */
+    color: #333333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    flex: 1; /* Allow content to grow and push footer down */
+}
+
+/* Header */
+header {
+    background-color: #013220; /* Dark green */
+    color: #ffffff; /* White text for pop */
+    padding: 20px;
+    text-align: center;
+    border-bottom-left-radius: 50px; /* Curved shape */
+    border-bottom-right-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Catchy shadow */
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #ffffff; /* White text for pop */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px; /* Pill shape for buttons */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    background-color: #808080; /* Grey */
+    color: #013220; /* Dark green */
+    transform: scale(1.1); /* Animation on hover */
+}
+
+/* Main Content */
+main {
+    flex: 1; /* Ensure main content grows to fill available space */
+}
+
+/* Sections - Rectangular with rounded corners */
+section {
+    padding: 40px 20px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 900px; /* Standardized width for all sections */
+    background-color: #e6e6e6; /* Light grey */
+    border: 2px solid #013220; /* Dark green border */
+    border-radius: 15px; /* Rounded rectangle */
+    box-shadow: 0 6px 12px rgba(1, 50, 32, 0.1); /* Dark green shadow */
+    animation: fadeInUp 1s ease-in-out;
+    position: relative; /* For decorative shapes */
+}
+
+#hero {
+    background-color: #013220; /* Dark green for hero */
+    color: #ffffff; /* White text for pop */
+    border-radius: 0 0 100px 100px; /* Oval-like bottom */
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent); /* White gradient for pop */
+    animation: rotate 10s linear infinite;
+}
+
+#hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #ffffff; /* White text for Welcome message */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+#about, #fellowship, #charity, #contact {
+    background-color: #e6e6e6; /* Light grey */
+    border: 2px dashed #013220; /* Dark green dashed */
+}
+
+h2 {
+    color: #013220; /* Dark green headings */
+    margin-bottom: 20px;
+    font-size: 2em;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #013220; /* Dark green */
+    margin: 10px auto;
+    border-radius: 2px; /* Small rectangle underline */
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(1, 50, 32, 0.05); /* Light dark green tint */
+    border-radius: 10px; /* Rounded rectangle for paragraphs */
+    transition: transform 0.3s;
+}
+
+p:hover {
+    transform: translateY(-5px); /* Lift animation */
+}
+
+/* Gallery Styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Larger images */
+    gap: 25px;
+    margin: 20px auto;
+    max-width: 900px; /* Match section width */
+    padding: 0 20px;
+}
+
+.gallery-item {
+    border: 2px solid #013220; /* Dark green */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #e6e6e6; /* Light grey */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(1, 50, 32, 0.2); /* Dark green shadow */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 450px; /* Increased height for larger images */
+    object-fit: cover; /* Ensure images scale nicely, showing fully */
+    display: block;
+}
+
+.gallery-item figcaption {
+    padding: 15px;
+    background-color: #013220; /* Dark green */
+    color: #ffffff; /* White text for pop */
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* Decorative Shapes */
+section:not(#gallery)::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #013220; /* Dark green */
+    border-radius: 50%; /* Circle shape */
+    opacity: 0.2;
+    animation: pulse 2s infinite;
+}
+
+/* Footer */
+footer {
+    background-color: #013220; /* Dark green */
+    color: #ffffff; /* White text for pop */
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+    nav a {
+        margin: 10px 0;
+        font-size: 1.2em;
+    }
+    #hero h2 {
+        font-size: 2em;
+    }
+    section {
+        padding: 30px 15px;
+        margin: 10px;
+        border-radius: 10px; /* Adjust for mobile */
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly smaller for mobile */
+        padding: 0 15px;
+    }
+    .gallery-item img {
+        height: 350px; /* Adjusted height for mobile view */
+    }
+    footer {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+    nav a {
+        padding: 8px 15px;
+    }
+    section {
+        padding: 20px;
+    }
+    .gallery {
+        grid-template-columns: 1fr; /* Single column for small screens */
+        padding: 0 10px;
+    }
+    .gallery-item img {
+        height: 450px; /* Larger height for small screens to ensure visibility */
+    }
+}
+
+
+.gallery-item video {
+    width: 100%;
+    height: 450px;              /* Same height as your images */
+    object-fit: cover;          /* Matches your img object-fit: cover */
+    display: block;
+    background: #000;
+}
+
+/* Mobile adjustments - exactly like your images */
+@media (max-width: 768px) {
+    .gallery-item video {
+        height: 350px;
+    }
+}
+@media (max-width: 480px) {
+    .gallery-item video {
+        height: 450px;   /* Same as your mobile image rule */
+    }
+}
